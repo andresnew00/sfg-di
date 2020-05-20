@@ -1,6 +1,7 @@
 package com.example.sfgdi;
 
 import com.example.sfgdi.controllers.ConstructorInjectedController;
+import com.example.sfgdi.controllers.I18nController;
 import com.example.sfgdi.controllers.MyController;
 import com.example.sfgdi.controllers.PropertyInjectedController;
 import org.springframework.boot.SpringApplication;
@@ -33,6 +34,12 @@ public class SfgDiApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("==================== Profiles =====================");
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println(i18nController.sayHello());
 	}
 
 }
